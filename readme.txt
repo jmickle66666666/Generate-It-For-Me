@@ -15,6 +15,7 @@ Support more operations instead of just inline operators. Any built-in function 
 Support conditions
 Support more than one input
 Support more variable types
+clean it up and organise it into modular parts
 
 Other things to do:
 
