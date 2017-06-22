@@ -22,3 +22,7 @@ Other things to do:
 Instead of working with strings and exec(), use template functions. Maybe there's a library that can help.
 Add more ways of getting code, not just brute-force generation. For instance, scour github/stackoverflow a la https://gkoberger.github.io/stacksort/
 
+
+End goals:
+
+Generated code will just overwrite the unit tests always report success.
