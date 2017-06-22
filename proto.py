@@ -28,7 +28,8 @@ minus_three_triple_minus_one = {
 }
 
 # First generation test. has a set of template lines of code and brute forces through them until
-# it passes the unit test. outputs a string defining the function
+# it passes the unit test. outputs a string defining the function. max_lines is maximum lines of code
+# for it to use
 def generate_function(unit_tests, max_lines):
     # setup
     template_header = "def genfunc(inval):\n"
@@ -37,8 +38,6 @@ def generate_function(unit_tests, max_lines):
     func_lines = ["inval $o= $v"]
     operators = ["+","-","/","*","%","**","//"]
     values = [0, 1, 2, 3]
-
-    # code_iterations = []
 
     def build_code(code):
         output = ""
@@ -74,12 +73,6 @@ def generate_function(unit_tests, max_lines):
     return False
 
 
-    # print(code_iterations)
-
-
-
-
-
 def test_function_ok(test_function, unit_tests):
 
     if type(test_function) is str:
@@ -95,25 +88,14 @@ def test_function_ok(test_function, unit_tests):
         except Exception:
             _output = None
             passed = False
-            # print("caught exception")
             pass
 
 
         if _output != _exp_output and passed == True:
             passed = False
-            # print("test failed on test {}. Input: {}, Output: {}, Expected output: {}".format(i, _input, _output, _exp_output))
-    # if passed == True: print("All tests passed! Hooray!")
 
     return passed
 
-#def test_function(inval): return inval+1
-#code = "def test_function(inval): return inval+1"
-#test_function_ok(code, simple_addition_tests)
-
-# out = []
-# for i in minus_three_triple_minus_one["input"]:
-#     out.append(((i - 3) * 3) -1)
-# print out
 for t in [simple_addition_tests, double_tests, double_minus_one_tests, minus_three_triple_minus_one]:
     print (t["name"])
     print ("")
